@@ -63,6 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'mini_racer'
 gem 'twitter-bootstrap-rails'
