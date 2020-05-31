@@ -5,12 +5,10 @@ class VotesController < ApplicationController
         vote.post_id = params[:post_id]
         vote.upvote = params[:upvote]
         vote.account_id = current_account.id
-    end
+        #check if vote by this user exists
+        existing_vote = Vote.where(account_id: current_account.id, post_id: post_id)
 
-    #check if vote by this user exists
-    existing_vote = Vote.where(account_id: current_account.id, post_id: post_id)
-
-    respond_to do |format|
+        respond_to do |format|
       format.js {
         if existing_vote.size > 0
             #destroy existing vote
@@ -27,10 +25,10 @@ class VotesController < ApplicationController
             @is_upvote = params
             render "votes/create"
             }
+        end
     end
-    end
-    
 
+    
     private
     def vote_params
         params.require(:vote).permit(:upvote, :post_id)
