@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :communities do
     resources :posts
   end
+  resources :subscriptions
+  resources :comments, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "public#index"
 end
