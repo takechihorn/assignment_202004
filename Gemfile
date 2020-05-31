@@ -71,6 +71,8 @@ gem 'sassc', '~> 2.0.0'
 gem 'jquery-turbolinks'
 gem 'popper_js', '~> 1.14.5'
 
+gem 'dotenv-rails'
 group :production do
   gem 'pg'
+  gem 'mysql2'
 end
